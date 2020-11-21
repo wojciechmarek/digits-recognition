@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'digits-recognition';
+
+  public sayHello(): void {
+    alert('Hello World!!!');
+  }
 }
