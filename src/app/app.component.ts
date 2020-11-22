@@ -1,29 +1,44 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {DrawableDirective} from './directive/drawable.directive';
 import {MatDialog, MatDialogContent} from '@angular/material/dialog';
+import * as tf from '@tensorflow/tfjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   @ViewChild(DrawableDirective) public canvas;
   @ViewChild(MatDialogContent) public modal;
 
+  public predictions: number[] = [];
+  private model: tf.Model;
+
   constructor(public dialog: MatDialog) {}
 
-  public async predict(image: ImageData): Promise<void> {
-    const asd = image;
-    console.log(asd);
+  ngOnInit(): void {
+      this.loadModel();
+  }
+
+  private async loadModel(): Promise<void> {
+    this.model = await tf.loadModel('/assets/model.json');
+  }
+
+  public async predict(imageData: ImageData): Promise<void> {
+    await tf.tidy(() => {
+      let image = tf.fromPixels(imageData, 1);
+      image = image.reshape([1, 28, 28, 1]);
+      image = tf.cast(image, 'float32');
+
+      const output = this.model.predict(image) as any;
+
+      this.predictions = Array.from(output.dataSync());
+    });
   }
 
   public openDialog(): void {
-    this.dialog.open(DialogContentExampleDialog, {
-      data: {
-        animal: 'panda'
-      }
-    });
+    this.dialog.open(DialogContentExampleDialog);
   }
 }
 

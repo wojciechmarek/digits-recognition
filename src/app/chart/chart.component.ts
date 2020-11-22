@@ -30,6 +30,7 @@ export class ChartComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
+    console.log(this.data);
     this.chartData = this.data.map((value, index) => ([index.toString(), value]));
   }
 }
