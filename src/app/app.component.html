@@ -1,2 +1,21 @@
-<h1>Hello to digits recognizer</h1>
-<button mat-raised-button color="primary" (click)="sayHello()">Say hello</button>
+<div class="container">
+  <div class="d-flex flex-column flex-lg-row justify-content-lg-around">
+    <div>
+      <h2>Draw digit here:</h2>
+      <div class="canvas-wrapper">
+        <canvas appDrawable (newImage)="predict($event)"></canvas>
+      </div>
+      <div class="mt-2">
+        <button mat-raised-button color="warn" (click)="canvas.clear()">CLEAR CANVAS</button>
+      </div>
+    </div>
+    <div class="mt-5 mt-lg-0">
+      <h2>Results:</h2>
+      <app-chart></app-chart>
+    </div>
+  </div>
+</div>
+
+<button class="fab-info" mat-fab color="primary" (click)="openDialog()">
+  <mat-icon>info</mat-icon>
+</button>
