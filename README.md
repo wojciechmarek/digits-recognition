@@ -8,7 +8,8 @@ Run `npm i` and `ng serve` for a dev server. Navigate to `http://localhost:4200/
 
 ## How it works?
 In the following way:
-![Sample](./digits-recognition-sample.PNG)
+<br />
+![digits-recognition-sample](https://user-images.githubusercontent.com/27026036/99911359-19b70800-2cf4-11eb-89b2-de215533a263.png)
 
 
 ## Used frameworks and libraries
