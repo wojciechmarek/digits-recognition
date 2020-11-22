@@ -8,7 +8,7 @@ Run `npm i` and `ng serve` for a dev server. Navigate to `http://localhost:4200/
 
 ## How it works?
 In the following way:
-
+![Sample](./digits-recognition-sample.PNG)
 
 
 ## Used frameworks and libraries
