@@ -1,20 +1,25 @@
 # DigitsRecognition
 
-This project was created for classes at UITM in Rzeszow, PL. It allows (or at least it tries) to recognize any handwritten digit in range 0-9.
+This project allows (or at least it tries 😛) to recognize handwritten numbers in the range 0-9.
 
-## Development server
+## Purpose
 
-Run `npm i` and `ng serve` for a dev server. Navigate to `http://localhost:4200/`. Yes, you need to have installed node.js and npm on your computer.
+I made this app to pass a class at a university.
 
-## How it works?
-In the following way:
-<br />
+## Screenshots
+
+- Overall layout:
+
 ![digits-recognition-sample](https://user-images.githubusercontent.com/27026036/99911359-19b70800-2cf4-11eb-89b2-de215533a263.png)
 
+## Used technologies
 
-## Used frameworks and libraries
 - Angular
 - Bootstrap
 - Tensorflow
 - Angular Material
 - Google charts
+
+## How to run
+
+It is an Angular application. Restore npm packages and run the development server. Don't worry about the error in the console saying: `Source has 4 element(s) but target allows only 3`. Just navigate to an app in the browser.
