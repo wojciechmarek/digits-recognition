@@ -1,4 +1,4 @@
-# DigitsRecognition
+# Digits Recognition
 
 This project allows (or at least it tries 😛) to recognize handwritten numbers in the range 0-9.
 
